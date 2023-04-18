@@ -20,5 +20,18 @@ class DictionaryTestCase(unittest.TestCase):
         self.assertTrue("red" in self.colors, "The dictionary should contain the entry 'red'")
         self.assertFalse("rot" in self.colors, "'in' should return false for unknown keys")
 
+    def test_dictionary_get(self):
+        """ the get method returns the value to a key or None if the key does not exist """
+        self.assertEqual(self.colors.get("red"), 0xff0000)
+        self.assertIsNone(self.colors.get("rot"))
+
+    def test_dictionary_list_access(self):
+        """ dictionary entries can also be accessed like lists with the key in square brackets """
+        self.assertEqual(self.colors["red"], 0xff0000)
+
+        # Trying to access a non existent key should raise a KeyError
+        with self.assertRaises(KeyError):
+            print(self.colors["rot"])
+
 if __name__ == "__main__":
     unittest.main()
