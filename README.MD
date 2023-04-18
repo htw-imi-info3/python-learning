@@ -38,17 +38,10 @@ if __name__ == '__main__':
 run all tests with:
 
 ```python
-    python3 -m unittest *.py
+    python3 -m unittest about/test_*.py
 ```
 
-To ensure that all your examples are correct.
-
-## Run in PyCharm
-
-To run all tests in PyCharm, the run configuration 
-needs to be modified to include all *.py files in 
-test discovery by adding `-p *.py` as additional parameter.
-See [Test Discovery](https://docs.python.org/3/library/unittest.html#unittest-test-discovery)
+To ensure that all examples are correct.
 
 # Unit Tests in Python
 
