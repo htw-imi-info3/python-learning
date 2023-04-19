@@ -9,8 +9,8 @@ def add_to_shoppingList(addition):
 class TestList(unittest.TestCase):
 
     def test1(self):
-        add_to_shoppingList("Mango")
-        self.assertEqual(my_shoppinglist, ['Mango'], "ERROR")
+        add_to_shoppingList("Pineapple")
+        self.assertEqual(my_shoppinglist, ['Pineapple'], "ERROR")
 
 
 
