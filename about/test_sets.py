@@ -17,7 +17,7 @@ class WindowTest(unittest.TestCase):
 
     # tests with the empty set
     def test_empty_set_type(self):
-        # what type is an empty set?
+        # what type is an empty set? ->declared as dict!
         self.assertEqual(type(self.set4), dict)
 
     def test_empty_set1(self):
@@ -30,6 +30,13 @@ class WindowTest(unittest.TestCase):
     def test_union_set1_set4(self):
         result = self.set1.union(self.set4)
         self.assertEqual(result, self.set1)
+
+    # duplicate values will only be kept once
+    def test_union_set1_set2(self):
+        result = self.set1.union(self.set2)
+        self.assertEqual(result, self.set1)
+
+
 
 
 if __name__ == '__main__':
