@@ -13,6 +13,5 @@ class TestList(unittest.TestCase):
         self.assertEqual(my_shoppinglist, ['Pineapple'], "ERROR")
 
 
-
 if __name__ == '__main__':
     unittest.main()
