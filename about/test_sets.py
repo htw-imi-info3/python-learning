@@ -4,7 +4,7 @@ import unittest
 class WindowTest(unittest.TestCase):
     set1 = {"Bread", "Apple", "Banana"}
     set2 = {"Bread", "Apple", "Apple"}
-    set3 = {"Cucumber", "Avocado", "Water"}
+    set3 = {"Apple", "Bread"}
     set4 = {}
     set5 = set(set4)
 
@@ -27,6 +27,7 @@ class WindowTest(unittest.TestCase):
         self.assertEqual(len(self.set4), 0)
 
     # tests dealing with .union() command
+    # union will contain all elements from both sides without duplicates
     def test_union_set1_set4(self):
         result = self.set1.union(self.set4)
         self.assertEqual(result, self.set1)
@@ -35,6 +36,18 @@ class WindowTest(unittest.TestCase):
     def test_union_set1_set2(self):
         result = self.set1.union(self.set2)
         self.assertEqual(result, self.set1)
+
+    # intersection will only keep the values which occur in BOTH sets:
+    def test_intersect_set1_set2(self):
+        result = self.set1.intersection(self.set2)
+        self.assertEqual(result, self.set3)
+
+    # the difference between two sets is the set of all the
+    # elements in first set that are not present in the second set
+    def test_intersect_set1_set2(self):
+        result = self.set1.difference(self.set2)
+        self.assertEqual("Bread", self.set3.pop())
+
 
 
 
