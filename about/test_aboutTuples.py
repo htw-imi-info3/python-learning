@@ -2,7 +2,7 @@ import unittest
 
 myTuple = ("apple", "banana", "cherry")
 noTuple = ("apple")
-oneTuple = ("apple", )
+oneTuple = ("apple",)
 mixedTuple = ("abc", 34, True, 40, "male")
 
 """
@@ -10,7 +10,8 @@ mixedTuple = ("abc", 34, True, 40, "male")
 - Tuple items are ordered, unchangeable, and allow duplicate values.
 """
 
-class testAboutTuple(unittest.TestCase):
+
+class TestAboutTuple(unittest.TestCase):
     def test1(self):
         length = len(myTuple)
         self.assertEqual(length, 3, "Has three Items")
@@ -26,7 +27,6 @@ class testAboutTuple(unittest.TestCase):
     def test4(self):
         elType = type(mixedTuple)
         self.assertEqual(elType, tuple, "Tuple")
-
 
 
 if __name__ == '__main__':
