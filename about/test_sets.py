@@ -3,17 +3,24 @@ import unittest
 
 class WindowTest(unittest.TestCase):
     set1 = {"Bread", "Apple", "Banana"}
-    set2 = {"Bread", "Apple", "Apple"}
-    set3 = {"Apple", "Bread"}
+    set2 = {"Bread", "Apple"}
+    set3 = {"Cucumber", "Avocado", "Water"}
     set4 = {}
     set5 = set(set4)
 
-    def SetUp(self):
+    def setUp(self):
         self.set1 = {"Bread", "Apple", "Banana"}
         self.set2 = {"Bread", "Apple"}
         self.set3 = {"Cucumber", "Avocado", "Water"}
         self.set4 = {}
         self.set5 = set(self.set4)
+
+    def tearDown(self):
+        self.set1 = {}
+        self.set2 = {}
+        self.set3 = {}
+        self.set4 = {}
+        self.set5 = {}
 
     # tests with the empty set
     def test_empty_set_type(self):
@@ -45,8 +52,10 @@ class WindowTest(unittest.TestCase):
     # the difference between two sets is the set of all the
     # elements in first set that are not present in the second set
     def test_intersect_set1_set2(self):
-        result = self.set1.difference(self.set2)
-        self.assertEqual("Bread", self.set3.pop())
+        result = str(self.set1.difference(self.set2))
+        banana = {"Banana"}
+        message = f"1 {result} 2 {type(result)} 3 {str(result)}"
+        self.assertTrue(str(result)=="{'Banana'}", message)
 
 
 
