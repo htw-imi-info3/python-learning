@@ -4,15 +4,14 @@ import inspect
 
 class ClassDefinitionTestCase(unittest.TestCase):
 
-    def setUp(self):
-        self.test_cases = {
-            int: True,
-            float: True,
-            complex: True,
-            True: False,
-            False: False,
-            None: False
-        }
+    class_types = [int, float, complex]
+    other_types = [True, False, None]
+
+    @classmethod
+    def setUpClass(cls):
+        cls.test_cases = dict.fromkeys(cls.class_types, True) | dict.fromkeys(cls.other_types, False)
+        if len(cls.test_cases) != len(cls.class_types) + len(cls.other_types):
+            raise ValueError("test_cases and the sum of class_types and other_types differ in length.")
 
     def test_isclass(self):
         for key in self.test_cases:
