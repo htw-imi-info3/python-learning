@@ -62,8 +62,8 @@ class DictionaryTestCase(unittest.TestCase):
             print(self.colors["rot"])
 
     def test_empty_dictionary_is_false(self):
-            empty_dict = {}
-            self.assertFalse(empty_dict)
+        empty_dict = {}
+        self.assertFalse(empty_dict)
 
     def test_add(self):
         """ Adding or overwriting a dict entry is a simple assignment """
