@@ -65,5 +65,16 @@ class DictionaryTestCase(unittest.TestCase):
             empty_dict = {}
             self.assertFalse(empty_dict)
 
+    def test_add(self):
+        """ Adding or overwriting a dict entry is a simple assignment """
+        self.assertNotIn("white", self.colors, "The key white should not be in the dict yet")
+        self.colors["white"] = 0xffffff
+        self.assertIn("white", self.colors, "The key white should be in the dict now")
+
+    def test_add_plusequals_undefined(self):
+        """ This is not a valid way to add entries """
+        with self.assertRaises(TypeError):
+            self.colors += {"white" : 0x000000}
+
 if __name__ == "__main__":
     unittest.main()
