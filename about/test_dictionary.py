@@ -77,8 +77,12 @@ class DictionaryTestCase(unittest.TestCase):
             self.colors += {"white" : 0x000000}
 
     def test_zip(self):
-        # TODO: implement
-        self.assertTrue(False)
+        """ A zip object is used to assemble a dictionary from two iterable types like lists, strings or tuples.
+        If they have a different length, zip will stop once one iterable is consumed."""
+        keys = ["red", "green", "blue"]
+        values = [0xff0000, 0x00ff00, 0x0000ff]
+        colors_2 = dict(zip(keys, values))
+        self.assertDictEqual(self.colors, colors_2, "These dictionaries should contain equal entries, maybe the fixture was changed?")
 
     def test_update(self):
         # TODO: implement
