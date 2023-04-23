@@ -85,8 +85,11 @@ class DictionaryTestCase(unittest.TestCase):
         self.assertDictEqual(self.colors, colors_2, "These dictionaries should contain equal entries, maybe the fixture was changed?")
 
     def test_update(self):
-        # TODO: implement
-        self.assertTrue(False)
+        """ Update is used to join two dictionaries, overwriting already present keys """
+        colors_2 = {"white" : 0xffffff, "red" : 0}
+        colors_2.update(self.colors)
+        self.assertIn("green", colors_2, "The green key should be added from the test fixture")
+        self.assertEqual(colors_2["red"], 0xff0000, "The value of red should be updated from the test fixture")
 
     def test_copy(self):
         # TODO: implement
