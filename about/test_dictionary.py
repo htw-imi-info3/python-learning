@@ -33,5 +33,9 @@ class DictionaryTestCase(unittest.TestCase):
         with self.assertRaises(KeyError):
             print(self.colors["rot"])
 
+    def test_empty_dictionary_is_false(self):
+            empty_dict = {}
+            self.assertFalse(empty_dict)
+
 if __name__ == "__main__":
     unittest.main()
