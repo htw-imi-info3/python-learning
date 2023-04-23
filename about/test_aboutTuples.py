@@ -27,6 +27,16 @@ class TestAboutTuple(unittest.TestCase):
         elType = type(mixedTuple)
         self.assertEqual(elType, tuple, "Tuple")
 
+    def test_tuples_are_immutable(self):
+        """ 'Adding' to a tuple creates a new one """
+        t = ("a", "b")
+        t_id = id(t)
+        t += ("c", "d")
+        self.assertTupleEqual(t, ("a", "b", "c", "d"))
+        self.assertNotEqual(t_id, id(t))
+
+    def test_tuples_cant_add_to_tuples(self):
+        pass
 
 if __name__ == '__main__':
     unittest.main()
