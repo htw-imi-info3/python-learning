@@ -34,6 +34,25 @@ class DictionaryTestCase(unittest.TestCase):
         self.assertEqual(self.colors.get("red"), 0xff0000)
         self.assertIsNone(self.colors.get("rot"))
 
+    def test_dictionary_get_default(self):
+        """ the get method accepts an optional parameter for a default value that is
+        returned when the key is not in the dict """
+        self.assertNotIn("rot", self.colors, "The key should not be in the dict")
+        red = self.colors.get("rot", 0xff0000)
+        self.assertEqual(red, 0xff0000, "The default value is returned instead of None")
+
+    def test_dictionary_get_setdefault(self):
+        """ setdefault works like get(key[, optional_value]),
+        but it also adds the key with the default value if its missing """
+        self.assertNotIn("white", self.colors, "The key white should not be in the dict yet")
+
+        red = self.colors.setdefault("red", 0xffffff)
+        white = self.colors.setdefault("white", 0xffffff)
+
+        self.assertIn("white", self.colors, "The key white should be in the dict now")
+        self.assertEqual(red, 0xff0000)
+        self.assertEqual(white, 0xffffff)
+
     def test_dictionary_list_access(self):
         """ dictionary entries can also be accessed like lists with the key in square brackets """
         self.assertEqual(self.colors["red"], 0xff0000)
