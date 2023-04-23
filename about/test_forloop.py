@@ -16,5 +16,12 @@ class TestForLoop(unittest.TestCase):
             list2.pop()
         self.assertEqual(list1,list2)
 
+    #Vorschlag 
+    def test_3(self):
+        list1 = []
+        for x in range (0,10):
+            list1.append(x)
+        self.assertEqual(list1, list(range(0, 10)))
+
 if __name__ == '__main__':
     unittest.main()
