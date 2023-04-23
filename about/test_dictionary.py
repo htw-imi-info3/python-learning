@@ -92,18 +92,24 @@ class DictionaryTestCase(unittest.TestCase):
         self.assertEqual(colors_2["red"], 0xff0000, "The value of red should be updated from the test fixture")
 
     def test_copy(self):
-        # TODO: implement
-        self.assertTrue(False)
-
-    def test_empty_key(self):
-        # TODO: implement
-        self.assertTrue(False)
-
-    def test_multiple_key_types(self):
+        """ Dictionaries are mutable. It is necessary to copy them explicitly, otherwise only a reference is created. """
         # TODO: implement
         self.assertTrue(False)
 
     def test_multiple_value_types(self):
+        """ Unlike a Map in Java, a Dictionary can contain different value types """
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_multiple_key_types(self):
+        """ Unlike a Map in Java, a Dictionary can have different key types,
+        as long as they are immutable. Mutable types like list can not be used as a key
+        and result in a TypeError."""
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_empty_key(self):
+        """ Dictionaries can have empty keys of different (immutable) types, like '', None, () """
         # TODO: implement
         self.assertTrue(False)
 
