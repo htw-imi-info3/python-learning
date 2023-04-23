@@ -108,8 +108,21 @@ class DictionaryTestCase(unittest.TestCase):
         self.assertTrue(False)
 
     def test_dict_to_list(self):
-        # TODO: implement
-        self.assertTrue(False)
+        """ The keys, values and items functions return different views on the dictionarys.
+        They return their own iterable types, similar to list, but an explicit cast to list
+        is necessary when one is needed """
+
+        keys = self.colors.keys()
+        values = self.colors.values()
+        items = self.colors.items()
+        self.assertNotEqual(type(keys), list)
+        keys_list = list(keys)
+        self.assertEqual(type(keys_list), list)
+
+        colors_2 = dict(zip(keys, values))
+        colors_3 = dict(items)
+        self.assertDictEqual(self.colors, colors_2)
+        self.assertDictEqual(self.colors, colors_3)
 
     def test_clear(self):
         # TODO: implement
