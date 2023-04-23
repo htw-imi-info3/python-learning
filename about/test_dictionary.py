@@ -15,6 +15,15 @@ class DictionaryTestCase(unittest.TestCase):
         colors_2 = { "red" : 0xFF0000, "green" : 0x00FF00, "blue" : 0x0000FF }
         self.assertDictEqual(self.colors, colors_2, "The dictionaries should contain identical entries")
 
+    def test_dictionary_definition_alternative(self):
+        """ If the keys follow variable naming conventions (no whitespace, no leading numbers ...) then
+        Dictionaries can be defined using the dict constructor. The keys are stored as strings. """
+        colors_2 = dict(red=0xff0000, green=0x00ff00, blue=0x0000ff)
+        self.assertDictEqual(self.colors, colors_2, "The dictionaries should contain identical entries")
+
+        for key in colors_2.keys():
+            self.assertEqual(type(key), str, "All keys should be strings right now")
+
     def test_dictionary_in(self):
         """ Keyword `in` is used to test if a dict contains a certain key """
         self.assertTrue("red" in self.colors, "The dictionary should contain the entry 'red'")
