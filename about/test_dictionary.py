@@ -76,5 +76,37 @@ class DictionaryTestCase(unittest.TestCase):
         with self.assertRaises(TypeError):
             self.colors += {"white" : 0x000000}
 
+    def test_zip(self):
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_update(self):
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_copy(self):
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_empty_key(self):
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_multiple_key_types(self):
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_multiple_value_types(self):
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_dict_to_list(self):
+        # TODO: implement
+        self.assertTrue(False)
+
+    def test_clear(self):
+        # TODO: implement
+        self.assertTrue(False)
+
 if __name__ == "__main__":
     unittest.main()
