@@ -1,3 +1,5 @@
+import unittest
+
 class TestMyModule(unittest.TestCase):
     def test_import(self):
         self.assertIsNotNone(unittest)     
