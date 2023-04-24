@@ -4,7 +4,7 @@ import os
 
 class MyTestCase(unittest.TestCase):
     def test_fileWriter(self):
-        # creating a temporary File and writing in it
+        # creating a temporary file and writing in it
         with open('testFile.txt', 'w') as temp_file:
             temp_file.write("this is a test")
 
