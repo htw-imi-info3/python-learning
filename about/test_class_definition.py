@@ -4,9 +4,9 @@ import inspect
 
 class ClassDefinitionTestCase(unittest.TestCase):
     # inspect.isclass() should return True:
-    class_types = [int, float, None]
+    class_types = [int, float, complex]
     # inspect.isclass() should return False:
-    other_types = [True, False, complex]
+    other_types = [True, False, None]
 
     @classmethod
     def setUpClass(cls):
