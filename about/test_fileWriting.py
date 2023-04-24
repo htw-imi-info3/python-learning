@@ -10,7 +10,7 @@ class MyTestCase(unittest.TestCase):
 
         # looking if the written text is correct
         with open(temp_file.name, 'r') as file:
-            self.assertIn("this is a test", file.read())
+            self.assertEqual(file.read(), "this is a test")
 
         # deleting the temporary file
         os.remove(temp_file.name)
