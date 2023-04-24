@@ -1,6 +1,7 @@
 import unittest
 
-
+import functions
+ # I added a class functions.py
 class Testfunctions(unittest.TestCase):
     def test_is_prime(self):
         self.assertFalse(functions.is_prime(4))
