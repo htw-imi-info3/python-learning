@@ -33,7 +33,7 @@ class TestClass(unittest.TestCase):
         # error message in case if test case got failed
         message = "given object is not instance of Book."
         # assertIsInstance() to check if obj is instance of class
-        self.assertIsInstance(movie2, Book, message)
+        self.assertNotIsInstance(movie2, Book, message)
 
     # test function to test whether obj is instance of class
     def test_positive(self):
