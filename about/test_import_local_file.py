@@ -1,13 +1,18 @@
 import unittest
-import testimport
+import test_import
 
 
-class TestImportLocalFile(unittest.TestCase):
+class TestLocalModule(unittest.TestCase):
 
     def test_import_local_file(self):
-        name = "Mathieu"
-        greeting = testimport.greet(name)
-        self.assertEqual(greeting, "Hello, Mathieu!")
+        self.assertIsNotNone(test_import)
+
+    def test_greet_function(self):
+        names = ["Name1", "Name2", "Name3", "Name4"]
+        for name in names:
+            greeting = test_import.greet(name)
+            self.assertEqual(greeting, "Hello, " + name + "!")
+            print(greeting)
 
 
 if __name__ == '__main__':
