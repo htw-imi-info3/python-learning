@@ -15,6 +15,7 @@ class TestList(unittest.TestCase):
     def test_append(self):
         add_to_shoppinglist('Pineapple')
         self.assertEqual(my_shoppinglist, ['Pineapple'], 'ERROR')
+        print(my_shoppinglist)
 
 
 if __name__ == '__main__':
